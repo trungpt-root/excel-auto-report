@@ -2,70 +2,82 @@ import pandas as pd
 import glob
 import os
 
-print("=== AUTO PROCESS EXCEL ===")
+print("=== CLEAN & REPORT SYSTEM ===")
 
 files = glob.glob("data/*.xlsx")
-
-if not files:
-    raise Exception("Không có file Excel nào!")
-
-print(f"Tìm thấy {len(files)} file")
 
 df_list = []
 
 for file in files:
-    try:
-        df = pd.read_excel(file)
-        df.columns = df.columns.str.strip()
-        df["__source_file"] = os.path.basename(file)  # thêm nguồn file
-        df_list.append(df)
-        print(f"OK: {file}")
-    except Exception as e:
-        print(f"LỖI: {file} - {e}")
+    df = pd.read_excel(file)
 
+    # ===== CLEAN DATA =====
+    df = df[[
+        "No.",
+        "Vietnamese Description",
+        "Item Category Code",
+        "Inventory",
+        "Base Unit of Measure"
+    ]]
+
+    df.columns = [
+        "Mã hàng",
+        "Tên hàng",
+        "Loại hàng",
+        "Tồn kho",
+        "Đơn vị"
+    ]
+
+    df["Nguồn file"] = os.path.basename(file)
+
+    df_list.append(df)
+
+# Gộp
 merged = pd.concat(df_list, ignore_index=True)
 
-print("Đã gộp xong")
+# ===== BÁO CÁO 1: TỒN KHO THEO LOẠI =====
+report_category = merged.groupby("Loại hàng")["Tồn kho"].sum().reset_index()
 
-# ===== AUTO DETECT =====
+# ===== BÁO CÁO 2: TOP HÀNG TỒN KHO =====
+report_top = merged.sort_values(by="Tồn kho", ascending=False).head(20)
 
-# tìm cột dạng số
-numeric_cols = merged.select_dtypes(include="number").columns.tolist()
+# ===== SAVE =====
+os.makedirs("output", exist_ok=True)
 
-# tìm cột dạng text
-text_cols = merged.select_dtypes(include="object").columns.tolist()
+merged.to_excel("output/data_clean.xlsx", index=False)
+report_category.to_excel("output/report_by_category.xlsx", index=False)
+report_top.to_excel("output/top_inventory.xlsx", index=False)
 
-print("Cột số:", numeric_cols)
-print("Cột text:", text_cols)
+print("✅ Đã xuất Excel")
 
-# ===== LOGIC THÔNG MINH =====
+# ===== DASHBOARD HTML =====
 
-if numeric_cols and text_cols:
-    try:
-        # lấy cột text đầu tiên làm group
-        group_col = text_cols[0]
-        
-        # lấy cột số đầu tiên để sum
-        value_col = numeric_cols[0]
+html = f"""
+<h2>📊 Tồn kho theo loại</h2>
+{report_category.to_html(index=False)}
 
-        print(f"Auto group theo: {group_col}")
-        print(f"Auto sum: {value_col}")
+<h2>🏆 Top 20 tồn kho</h2>
+{report_top.to_html(index=False)}
+"""
 
-        report = merged.groupby(group_col)[value_col].sum().reset_index()
+html_page = f"""
+<html>
+<head>
+<style>
+body {{ font-family: Arial; padding: 20px; }}
+table {{ border-collapse: collapse; width: 100%; margin-bottom: 40px; }}
+th, td {{ border: 1px solid #ddd; padding: 8px; }}
+th {{ background-color: #f2f2f2; }}
+</style>
+</head>
+<body>
+<h1>📊 INVENTORY DASHBOARD</h1>
+{html}
+</body>
+</html>
+"""
 
-    except:
-        print("Không group được → xuất raw")
-        report = merged
+with open("output/dashboard.html", "w", encoding="utf-8") as f:
+    f.write(html_page)
 
-else:
-    print("Không đủ dữ liệu để group → xuất raw")
-    report = merged
-
-# ======================
-
-if os.path.exists("report.xlsx"):
-    os.remove("report.xlsx")
-
-report.to_excel("report.xlsx", index=False)
-
-print("✅ DONE")
+print("✅ Dashboard ready")
