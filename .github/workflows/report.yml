@@ -1,6 +1,7 @@
 name: Auto Excel Report
 permissions:
   contents: write
+
 on:
   push:
     paths:
@@ -14,26 +15,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-         persist-credentials: true
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install lib
+      - name: Install libraries
         run: pip install pandas openpyxl
 
-      - name: Run script
+      - name: Run report script
         run: python script.py
 
-      - name: Commit report
+      - name: Commit and push report
         run: |
-            git config --global user.name "github-actions"
-            git config --global user.email "actions@github.com"
-            git add output/
-            git commit -m "update report" || echo "No changes"
-            git push
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add output/
+          git commit -m "update report" || echo "No changes"
+          git push
