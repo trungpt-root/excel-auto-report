@@ -1,0 +1,479 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inventory Dashboard</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 30px;
+    background: #f5f7fa;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+}
+
+th {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 INVENTORY DASHBOARD</h1>
+
+<div class="section">
+<h2>📦 Tồn kho theo loại</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Loại hàng</th>
+      <th>Tồn kho</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01FA</td>
+      <td>243836</td>
+    </tr>
+    <tr>
+      <td>02ME</td>
+      <td>39801</td>
+    </tr>
+    <tr>
+      <td>03FO</td>
+      <td>22565</td>
+    </tr>
+    <tr>
+      <td>04PP</td>
+      <td>22801</td>
+    </tr>
+    <tr>
+      <td>05OS</td>
+      <td>2690</td>
+    </tr>
+    <tr>
+      <td>06ZF</td>
+      <td>36550</td>
+    </tr>
+    <tr>
+      <td>07ZC</td>
+      <td>221670</td>
+    </tr>
+    <tr>
+      <td>08ZS</td>
+      <td>526909</td>
+    </tr>
+    <tr>
+      <td>09ZP</td>
+      <td>87449</td>
+    </tr>
+    <tr>
+      <td>10WB</td>
+      <td>809032</td>
+    </tr>
+    <tr>
+      <td>11TB</td>
+      <td>793154</td>
+    </tr>
+    <tr>
+      <td>12EB</td>
+      <td>275560</td>
+    </tr>
+    <tr>
+      <td>13EC</td>
+      <td>22133</td>
+    </tr>
+    <tr>
+      <td>14SC</td>
+      <td>90334</td>
+    </tr>
+    <tr>
+      <td>15VT</td>
+      <td>77101</td>
+    </tr>
+    <tr>
+      <td>16ST</td>
+      <td>17152</td>
+    </tr>
+    <tr>
+      <td>17PT</td>
+      <td>30784</td>
+    </tr>
+    <tr>
+      <td>18MW</td>
+      <td>799</td>
+    </tr>
+    <tr>
+      <td>19BP</td>
+      <td>1109365</td>
+    </tr>
+    <tr>
+      <td>20BM</td>
+      <td>400237</td>
+    </tr>
+    <tr>
+      <td>21BE</td>
+      <td>410163</td>
+    </tr>
+    <tr>
+      <td>22BS</td>
+      <td>15561</td>
+    </tr>
+    <tr>
+      <td>23WP</td>
+      <td>3393</td>
+    </tr>
+    <tr>
+      <td>24FR</td>
+      <td>40732</td>
+    </tr>
+    <tr>
+      <td>25TH</td>
+      <td>10353</td>
+    </tr>
+    <tr>
+      <td>26LA</td>
+      <td>659595</td>
+    </tr>
+    <tr>
+      <td>27PK</td>
+      <td>1318544</td>
+    </tr>
+    <tr>
+      <td>28PA</td>
+      <td>3228</td>
+    </tr>
+    <tr>
+      <td>29PI</td>
+      <td>102824</td>
+    </tr>
+    <tr>
+      <td>BS-HFW</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <td>BS-SB</td>
+      <td>5500</td>
+    </tr>
+    <tr>
+      <td>BS-TC</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <td>BS-TV</td>
+      <td>1700</td>
+    </tr>
+    <tr>
+      <td>ED-ACC</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <td>ED-BP</td>
+      <td>36330</td>
+    </tr>
+    <tr>
+      <td>ED-HN</td>
+      <td>15871</td>
+    </tr>
+    <tr>
+      <td>FGSP</td>
+      <td>8050</td>
+    </tr>
+    <tr>
+      <td>GR-BP</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <td>MM-BP</td>
+      <td>6708</td>
+    </tr>
+    <tr>
+      <td>MS-AM</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>MS-AM-GRS</td>
+      <td>260</td>
+    </tr>
+    <tr>
+      <td>MS-TH</td>
+      <td>1235</td>
+    </tr>
+    <tr>
+      <td>PAX-BG</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <td>PAX-BP</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <td>PAX-HFW</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <td>PNB-NR</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>PNB-RC</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>PNB-TC</td>
+      <td>1102</td>
+    </tr>
+    <tr>
+      <td>PNB-WO</td>
+      <td>1080</td>
+    </tr>
+    <tr>
+      <td>RES-BB</td>
+      <td>7400</td>
+    </tr>
+    <tr>
+      <td>RES-HFW</td>
+      <td>1620</td>
+    </tr>
+    <tr>
+      <td>SCT-AVB</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <td>SCT-BR</td>
+      <td>1950</td>
+    </tr>
+    <tr>
+      <td>SCT-SB</td>
+      <td>3300</td>
+    </tr>
+    <tr>
+      <td>VD-ACC</td>
+      <td>22455</td>
+    </tr>
+    <tr>
+      <td>VD-MIG</td>
+      <td>15847</td>
+    </tr>
+    <tr>
+      <td>VD-PNB</td>
+      <td>22780</td>
+    </tr>
+    <tr>
+      <td>VD-SIG</td>
+      <td>5800</td>
+    </tr>
+    <tr>
+      <td>VD-TL</td>
+      <td>2350</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>🏆 Top 20 tồn kho</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mã hàng</th>
+      <th>Tên hàng</th>
+      <th>Loại hàng</th>
+      <th>Tồn kho</th>
+      <th>Đơn vị</th>
+      <th>Nguồn file</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>27PK-08-051-0301</td>
+      <td>TAGPIN FOR HANGTAG 25MM WHITE(11-0601TCX)</td>
+      <td>27PK</td>
+      <td>275728</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>11TB-02-071-0105</td>
+      <td>POLY TRIMMING NỘI ĐỊA 23MM BLACK</td>
+      <td>11TB</td>
+      <td>148381</td>
+      <td>M</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>11TB-01-051-0101</td>
+      <td>NYLON HERRING BOND TAPE 20MM BLACK(19-4006TCX)</td>
+      <td>11TB</td>
+      <td>140956</td>
+      <td>M</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-08-053-0301</td>
+      <td>CIRCLE TAGPIN 5" WHITE(11-0601TCX)</td>
+      <td>27PK</td>
+      <td>129857</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>08ZS-01-601-0103</td>
+      <td>COIL ZIPPER SLIDER SHORT TAB REVERSED #5-YKK BLACK(580)</td>
+      <td>08ZS</td>
+      <td>87901</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>26LA-01-055-0116</td>
+      <td>PAPER LABEL RESTUBE BEACH 12CM*3CM BLACK-WHITE</td>
+      <td>26LA</td>
+      <td>81444</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>08ZS-01-051-0148</td>
+      <td>COIL ZIPPER SLIDER LONG TAB #5-YKK ELAMO BLACK(580)</td>
+      <td>08ZS</td>
+      <td>76108</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-08-013-2101</td>
+      <td>VP BROWN KRAFT PAPER STRING 180MM BROWN</td>
+      <td>27PK</td>
+      <td>70757</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>11TB-01-051-1805</td>
+      <td>NYLON HERRING BOND TAPE 20MM OASIS</td>
+      <td>11TB</td>
+      <td>65138</td>
+      <td>M</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-04-098-2202</td>
+      <td>PRODUCT TAG 1042490 MULTI</td>
+      <td>27PK</td>
+      <td>62068</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>10WB-02-430-1801</td>
+      <td>NYLON WEBBING TAPE (420D) 25MM NEON YELLOW(13-0630TCX)</td>
+      <td>10WB</td>
+      <td>52632</td>
+      <td>M</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>19BP-05-351-0106</td>
+      <td>CHROMEO LITE TENSIONLOCK 20MM BLACK(S327)</td>
+      <td>19BP</td>
+      <td>51040</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>19BP-05-680-0105</td>
+      <td>SLL DOUBLE BARS NỘI ĐỊA 20MM BLACK</td>
+      <td>19BP</td>
+      <td>45150</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-07-002-0116</td>
+      <td>STICKER BARCODE FOR HANGTAG (052192) BLACK-WHITE</td>
+      <td>27PK</td>
+      <td>44383</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>11TB-02-012-0101</td>
+      <td>POLY TRIMMING 23MM BLACK(19-4006TCX)</td>
+      <td>11TB</td>
+      <td>43050</td>
+      <td>M</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>26LA-01-533-0116</td>
+      <td>PAPER LABEL CO2 10,9GR FOR RESTUBE BEACH 8.9CM*2.5CM BLACK-WHITE</td>
+      <td>26LA</td>
+      <td>41041</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>26LA-01-063-0116</td>
+      <td>PAPER LABEL INSTRUCTION RESTUBE BEACH 8.9CM*2.5CM BLACK-WHITE</td>
+      <td>26LA</td>
+      <td>40980</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>20BM-02-042-0701</td>
+      <td>METAL CLIP FOR WEBBING GUIDE 38MM RED(18-1663TCX)</td>
+      <td>20BM</td>
+      <td>40107</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-07-013-0116</td>
+      <td>BARCODE STICKER FOR VDVN BLACK-WHITE</td>
+      <td>27PK</td>
+      <td>39067</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+    <tr>
+      <td>27PK-07-401-0301</td>
+      <td>STICKER FOR INSTRUCTION BOOK TO USA WHITE(11-0601TCX)</td>
+      <td>27PK</td>
+      <td>38235</td>
+      <td>PCS</td>
+      <td>Item List VAUDE_HANTH 2026-04-25T02_20_05.xlsx</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>
